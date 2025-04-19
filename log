@@ -20,3 +20,9 @@ sá., 19 de abr. de 2025 15:39:34:
  tests:  0|6
 total_score: 0/70
 bb63f31
+sá., 19 de abr. de 2025 15:40:36: 
+ hashmap.c | 2 ++
+ 1 file changed, 2 insertions(+)
+ tests:  1|5
+total_score: 10/70
+d7e85c9
