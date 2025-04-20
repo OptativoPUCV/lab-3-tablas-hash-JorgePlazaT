@@ -54,14 +54,12 @@ void insertMap(HashMap * map, char * key, void * value) {
             return;
         }
         
-        if (strcmp(entrada->key, key) == 0) {
-            return;
-        }
+        if (strcmp(entrada->key, key) == 0) return;
 
         posMap = (posMap + 1) % map->capacity;
+
+        if(posMap == posInicial) return;
     }
-
-
 }
 
 void enlarge(HashMap * map) {
