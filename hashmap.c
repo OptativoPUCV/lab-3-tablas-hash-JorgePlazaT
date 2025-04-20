@@ -54,6 +54,11 @@ void insertMap(HashMap * map, char * key, void * value) {
             return;
         }
         
+        if (strcmp(entrada->key, key) == 0) {
+            return;
+        }
+
+        posMap = (posMap + 1) % map->capacity;
     }
 
 
