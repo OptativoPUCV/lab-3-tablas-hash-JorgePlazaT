@@ -55,3 +55,30 @@ hashmap.c:46:19: error: unused variable 'originalPosicion' [-Werror=unused-varia
                    ^~~~~~~~~~~~~~~~
 cc1.exe: all warnings being treated as errors
 580fc51
+do., 20 de abr. de 2025 13:46:33: 
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'insertMap':
+hashmap.c:43:42: error: 'return' with a value, in function returning void [-Werror]
+     if(map ==NULL || key == NULL) return NULL;
+                                          ^~~~
+hashmap.c:42:6: note: declared here
+ void insertMap(HashMap * map, char * key, void * value) {
+      ^~~~~~~~~
+hashmap.c:45:38: error: passing argument 1 of 'hash' makes pointer from integer without a cast [-Werror=int-conversion]
+     unsigned long posicionMap = hash(*key, map->capacity);
+                                      ^
+hashmap.c:26:6: note: expected 'char *' but argument is of type 'char'
+ long hash( char * key, long capacity) {
+      ^~~~
+hashmap.c:48:26: error: invalid type argument of '->' (have 'long unsigned int')
+     if(strcmp(posicionMap->key, key) == 0) return;
+                          ^~
+hashmap.c:53:20: error: comparison between pointer and integer [-Werror]
+     if(posicionMap == NULL || key == NULL ){
+                    ^~
+hashmap.c:46:19: error: unused variable 'originalPosicion' [-Werror=unused-variable]
+     unsigned long originalPosicion = posicionMap;
+                   ^~~~~~~~~~~~~~~~
+cc1.exe: all warnings being treated as errors
+0e59c53
