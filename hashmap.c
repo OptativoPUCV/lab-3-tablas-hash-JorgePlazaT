@@ -40,10 +40,21 @@ int is_equal(void* key1, void* key2){
 
 
 void insertMap(HashMap * map, char * key, void * value) {
-    if(map ==NULL || key == NULL) return NULL;
-    
-    unsigned long posMap = hash(*key, map->capacity); 
-    unsigned long originalPos = posMap;
+
+    if(map == NULL || key == NULL) return NULL;
+    unsigned long posMap = hash(key, map->capacity); 
+    unsigned long posInicial = posMap;
+
+    while(1){
+
+        Pair *entrada = map->buckets[posMap];
+        if(entrada == NULL || entrada->key == NULL){
+            map->buckets[posMap] = createPair(key, value);
+            map->size++
+            return;
+        }
+        
+    }
 
 
 }
