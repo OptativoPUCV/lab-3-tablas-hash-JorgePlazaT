@@ -42,18 +42,8 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) {
     if(map ==NULL || key == NULL) return NULL;
     
-    unsigned long posicionMap = hash(*key, map->capacity); 
-    unsigned long originalPosicion = posicionMap;
-
-    while(1){
-
-        if(strcmp(posicionMap->key, key) == 0) return;
-        posicionMap = (posicionMap + 1) % map->capacity;
-        
-    }
-  ;
-
-
+    unsigned long posMap = hash(*key, map->capacity); 
+    unsigned long originalPos = posMap;
 
 
 }
