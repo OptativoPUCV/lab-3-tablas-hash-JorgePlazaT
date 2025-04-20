@@ -52,7 +52,6 @@ void insertMap(HashMap * map, char * key, void * value) {
 
     if(posicionMap == NULL || key == NULL ){
 
-    } 
 
 
 }
