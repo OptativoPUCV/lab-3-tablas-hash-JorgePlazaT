@@ -48,9 +48,10 @@ void insertMap(HashMap * map, char * key, void * value) {
     while(1){
 
         Pair *entrada = map->buckets[posMap];
-        if(entrada == NULL || entrada->key == NULL){
+        if(entrada == NULL ||  entrada->key== NULL){
             map->buckets[posMap] = createPair(key, value);
             map->size++
+            map->curret = posMap;
             return;
         }
         
@@ -92,7 +93,12 @@ void eraseMap(HashMap * map,  char * key) {
 
 }
 
-Pair * searchMap(HashMap * map,  char * key) {   
+Pair * searchMap(HashMap * map,  char * key) {
+    if(map == NULL || key == NULL) return NULL;
+
+    unsigned long posMax = hash(key, map->capacity);
+
+    if(posMax == NULL)
 
 
     return NULL;
