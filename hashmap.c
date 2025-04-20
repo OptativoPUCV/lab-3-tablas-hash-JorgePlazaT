@@ -50,8 +50,6 @@ void insertMap(HashMap * map, char * key, void * value) {
     posicionMap = (posicionMap + 1) % map->capacity;
 
 
-    if(posicionMap == NULL || key == NULL ){
-
 
 
 }
