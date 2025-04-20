@@ -45,9 +45,13 @@ void insertMap(HashMap * map, char * key, void * value) {
     unsigned long posicionMap = hash(*key, map->capacity); 
     unsigned long originalPosicion = posicionMap;
 
-    if(strcmp(posicionMap->key, key) == 0) return;
+    while(1){
 
-    posicionMap = (posicionMap + 1) % map->capacity;
+        if(strcmp(posicionMap->key, key) == 0) return;
+        posicionMap = (posicionMap + 1) % map->capacity;
+        
+    }
+  ;
 
 
 
