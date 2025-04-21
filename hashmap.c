@@ -90,7 +90,7 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * searchMap(HashMap * map,  char * key) {
     if(map == NULL || key == NULL) return NULL;
-    unsigned long posMax = hash(key, map->capacity);
+    int posMax = hash(key, map->capacity);
 
     for(int i = 0; i< map->capacity; i++){
         int posCurrent = (posMax + 1) % map->capacity;
@@ -103,7 +103,7 @@ Pair * searchMap(HashMap * map,  char * key) {
             return pair;
         }
     }
-    
+
     return NULL;
 }
 
