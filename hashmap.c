@@ -53,7 +53,7 @@ void insertMap(HashMap * map, char * key, void * value) {
             return;
         }
     
-        if (is_equal(entrada->key, key) == 0) return;
+        if (strcmp(entrada->key, key) == 0) return;
         posMap = (posMap + 1) % map->capacity;
         if(posMap == posInicial) return;
        
@@ -93,7 +93,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     int posMax = hash(key, map->capacity);
 
     for(int i = 0; i< map->capacity; i++){
-        int posCurrent = (posMax + i) % map->capacity;
+        int posCurrent = (posMax + 1) % map->capacity;
         Pair *pair = map->buckets[posCurrent];
 
         if(pair == NULL) return NULL;
