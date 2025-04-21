@@ -52,11 +52,9 @@ void insertMap(HashMap * map, char * key, void * value) {
             map->current = posMap;
             return;
         }
-    
         if (strcmp(entrada->key, key) == 0) return;
         posMap = (posMap + 1) % map->capacity;
         if(posMap == posInicial) return;
-       
     }
 }
 
@@ -78,14 +76,14 @@ HashMap * createMap(long capacity) {
     map->capacity = capacity;
     map->size = 0;
     map->current = -1;
-
     return map;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
-
-
-
+void eraseMap(HashMap * map,  char * key) {
+    Pair *pair = searchMap(map, key);
+    if(pair == NULL) return;
+    pair->key = NULL;
+    map->size++;
 }
 
 Pair * searchMap(HashMap * map,  char * key) {
@@ -97,12 +95,9 @@ Pair * searchMap(HashMap * map,  char * key) {
             map->current = pos;
             return map->buckets[pos];
         }
-
         pos = (pos + 1) % map->capacity;
         if(pos == posOriginal) return NULL;
-        
     }
-
     return NULL;
 }
 
