@@ -95,10 +95,15 @@ Pair * searchMap(HashMap * map,  char * key) {
     for(int i = 0; i< map->capacity; i++){
         int posCurrent = (posMax + 1) % map->capacity;
         Pair *pair = map->buckets[posCurrent];
+
         if(pair == NULL) return NULL;
+
+        if(pair->key != NULL && strcpy(pair->key, key) == 0){
+            map->current = posCurrent;  
+            return pair;
+        }
     }
-
-
+    
     return NULL;
 }
 
