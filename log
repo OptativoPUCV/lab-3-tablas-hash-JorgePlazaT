@@ -817,3 +817,9 @@ do., 20 de abr. de 2025 23:27:53:
  tests:  16|1
 total_score: 60/70
 b33bf7f
+do., 20 de abr. de 2025 23:29:08: 
+ hashmap.c | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
+ tests:  17|0
+total_score: 70/70
+0897d23
