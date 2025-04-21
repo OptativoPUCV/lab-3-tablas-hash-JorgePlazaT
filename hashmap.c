@@ -38,16 +38,13 @@ int is_equal(void* key1, void* key2){
     return 0;
 }
 
-//lab
-void insertMap(HashMap * map, char * key, void * value) {
 
+void insertMap(HashMap * map, char * key, void * value) {
     if(map == NULL || key == NULL) return NULL;
-    unsigned long posMap = hash(key, map->capacity); 
-    unsigned long posInicial = posMap;
+    int posMap = hash(key, map->capacity); 
+    int posInicial = posMap;
 
     while(1){
-
-        
         Pair *entrada = map->buckets[posMap];
         if(entrada == NULL ||  entrada->key== NULL){
             map->buckets[posMap] = createPair(key, value);
@@ -55,11 +52,9 @@ void insertMap(HashMap * map, char * key, void * value) {
             map->current = posMap;
             return;
         }
-        
+    
         if (strcmp(entrada->key, key) == 0) return;
-
         posMap = (posMap + 1) % map->capacity;
-
         if(posMap == posInicial) return;
        
     }
@@ -73,7 +68,6 @@ void enlarge(HashMap * map) {
 
 
 HashMap * createMap(long capacity) {
-
     HashMap * map = (HashMap *) malloc(sizeof(HashMap));
     if (map == NULL) return NULL;
     map->buckets = (Pair **)malloc(sizeof(Pair *) * capacity);
@@ -81,7 +75,6 @@ HashMap * createMap(long capacity) {
     for (long i = 0; i < capacity; i++) {
         map->buckets[i] = NULL;
     }
-
     map->capacity = capacity;
     map->size = 0;
     map->current = -1;
@@ -97,7 +90,6 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * searchMap(HashMap * map,  char * key) {
     if(map == NULL || key == NULL) return NULL;
-
     unsigned long posMax = hash(key, map->capacity);
 
     if(posMax == NULL)
@@ -105,6 +97,10 @@ Pair * searchMap(HashMap * map,  char * key) {
 
     return NULL;
 }
+
+
+
+
 
 Pair * firstMap(HashMap * map) {
 
