@@ -406,3 +406,24 @@ hashmap.c:105:1: warning: control reaches end of non-void function [-Wreturn-typ
  }
  ^
 7b85a39
+do., 20 de abr. de 2025 20:34:32: 
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'insertMap':
+hashmap.c:44:43: warning: 'return' with a value, in function returning void
+     if(map == NULL || key == NULL) return NULL;
+                                           ^~~~
+hashmap.c:42:6: note: declared here
+ void insertMap(HashMap * map, char * key, void * value) {
+      ^~~~~~~~~
+hashmap.c:54:13: error: expected ';' before 'map'
+             map->curret = posMap;
+             ^~~
+hashmap.c: In function 'searchMap':
+hashmap.c:101:15: warning: comparison between pointer and integer
+     if(posMax == NULL)
+               ^~
+hashmap.c:105:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+29d8da8
