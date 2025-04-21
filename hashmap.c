@@ -89,26 +89,24 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) {
-    if(map == NULL || key == NULL) return NULL;
+    if (map == NULL || key == NULL) return NULL;
+
     int posMax = hash(key, map->capacity);
 
-    for(int i = 0; i< map->capacity; i++){
-        int posCurrent = (posMax + 1) % map->capacity;
+    for (int i = 0; i < map->capacity; i++) {
+        int posCurrent = (posMax + i) % map->capacity;
         Pair *pair = map->buckets[posCurrent];
 
-        if(pair == NULL) return NULL;
+        if (pair == NULL) return NULL;
 
-        if(pair->key != NULL && strcmp(pair->key, key) == 0){
-            map->current = posCurrent;  
+        if (pair->key != NULL && is_equal(pair->key, key) == 0) {
+            map->current = posCurrent;
             return pair;
         }
     }
 
     return NULL;
 }
-
-
-
 
 
 Pair * firstMap(HashMap * map) {
