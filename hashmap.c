@@ -122,7 +122,7 @@ Pair * nextMap(HashMap * map) {
         Pair *pair = map->buckets[i];
         if(pair != NULL && pair->key != NULL){
             map->current = i;
-            return map->buckets[i];;
+            return map->buckets[i];
         }
     }
     return NULL;
