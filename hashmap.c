@@ -98,7 +98,7 @@ Pair * searchMap(HashMap * map,  char * key) {
 
         if(pair == NULL) return NULL;
 
-        if(pair->key != NULL && is_equal(pair->key, key) == 0){
+        if(pair->key != NULL && strcmp(pair->key, key) == 0){
             map->current = posCurrent;  
             return pair;
         }

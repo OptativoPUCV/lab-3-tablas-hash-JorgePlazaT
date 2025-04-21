@@ -537,3 +537,9 @@ do., 20 de abr. de 2025 21:34:02:
  tests:  5|4
 total_score: 30/70
 e950a83
+do., 20 de abr. de 2025 21:35:24: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  5|4
+total_score: 30/70
+fe85995
