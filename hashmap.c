@@ -92,7 +92,11 @@ Pair * searchMap(HashMap * map,  char * key) {
     if(map == NULL || key == NULL) return NULL;
     unsigned long posMax = hash(key, map->capacity);
 
-    if(posMax == NULL)
+    for(int i = 0; i< map->capacity; i++){
+        int posCurrent = (posMax + 1) % map->capacity;
+        Pair *pair = map->buckets[posCurrent];
+        if(pair == NULL) return NULL;
+    }
 
 
     return NULL;
