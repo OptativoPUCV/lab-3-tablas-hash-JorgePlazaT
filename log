@@ -727,3 +727,31 @@ hashmap.c:116:8: note: declared here
  Pair * firstMap(HashMap * map) {
         ^~~~~~~~
 aa7df22
+do., 20 de abr. de 2025 23:23:39: 
+Compilation failed
+In file included from test.c:4:0:
+hashmap.c: In function 'insertMap':
+hashmap.c:43:43: warning: 'return' with a value, in function returning void
+     if(map == NULL || key == NULL) return NULL;
+                                           ^~~~
+hashmap.c:42:6: note: declared here
+ void insertMap(HashMap * map, char * key, void * value) {
+      ^~~~~~~~~
+hashmap.c: In function 'enlarge':
+hashmap.c:67:5: error: expected ';' before 'map'
+     map->size = 0;
+     ^~~
+hashmap.c:69:26: error: 'HashMap {aka struct HashMap}' has no member named 'oldCapac'
+     for(int i = 0; i< map->oldCapac; i++){
+                          ^~
+hashmap.c:64:9: warning: unused variable 'oldCapac' [-Wunused-variable]
+     int oldCapac = map->capacity;
+         ^~~~~~~~
+hashmap.c: In function 'firstMap':
+hashmap.c:117:22: warning: 'return' with no value, in function returning non-void
+     if (map == NULL) return;
+                      ^~~~~~
+hashmap.c:116:8: note: declared here
+ Pair * firstMap(HashMap * map) {
+        ^~~~~~~~
+5ea2e21
